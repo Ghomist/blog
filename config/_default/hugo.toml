@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
+baseURL = "https://ghomist.github.io/"
 
 # https://blowfish.page/docs/configuration/#language-and-i18n
 languageCode = "zh-cn"
