@@ -10,5 +10,6 @@ homepage.layout = 'profile'
 # show recent pages
 homepage.showRecent = true
 homepage.showMoreLink = true
+homepage.showMoreLinkDest = '/blog/posts'
 
 article.showTableOfContents = true
