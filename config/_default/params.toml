@@ -12,3 +12,6 @@ homepage.showRecent = true
 homepage.showMoreLink = true
 
 article.showTableOfContents = true
+article.showTaxonomies = true
+article.showWordCount = true
+article.showBreadcrumbs = true

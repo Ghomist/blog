@@ -1,8 +1,15 @@
 baseURL = "https://ghomist.github.io/"
 
-# https://blowfish.page/docs/configuration/#language-and-i18n
-languageCode = "zh-cn"
-defaultContentLanguage = "zh-cn"
-
 title = "Ghomist 个人随笔"
 theme = "blowfish"
+
+languageCode = "zh-cn"
+enableEmoji = true
+enableGitInfo = true
+hasCJKLanguage = true
+defaultContentLanguage = "zh-cn"
+
+[taxonomies]
+tag = "tags"
+series = "series"
+category = "categories"

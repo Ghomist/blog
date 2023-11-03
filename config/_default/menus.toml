@@ -18,9 +18,13 @@ weight = 2
 
 [[main]]
 pre = "github"
-name = "Blog 仓库"
+name = "Blog 源码"
 url = "https://github.com/Ghomist/blog"
 weight = 10
+
+[[footer]]
+name = "Tags"
+pageRef = "tags"
 
 # [[footer]]
 # name = "Privacy"

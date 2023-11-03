@@ -1,7 +1,7 @@
 +++
 title = "Hugo + Blowfish 搭建个人 Blog"
 date = 2023-11-02T16:09:27+08:00
-draft = true
+tags = ['hugo']
 +++
 
 > 这应该是第一篇文章…不知道写什么好干脆记录一下搭 blog 遇到的问题好了
