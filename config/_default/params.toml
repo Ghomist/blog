@@ -1,0 +1,12 @@
+# https://blowfish.page/docs/configuration/#theme-parameters
+
+# blowfish (default), avocado, fire, ocean and slate
+colorScheme = 'blowfish'
+
+# blowfish layout
+# profile, page, hero, background, card, custom
+homepage.layout = 'profile'
+
+# show recent pages
+homepage.showRecent = true
+homepage.showMoreLink = true

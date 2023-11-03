@@ -1,0 +1,6 @@
+[author]
+name = "Ghomist"
+image = 'img/logo.png'
+links = [{ gitHub = 'https://github.com/Ghomist' }]
+# headline = ''  # display at home page
+# bio = ''       # at footer of articles

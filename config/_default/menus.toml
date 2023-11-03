@@ -1,0 +1,27 @@
+# [[main / footer]]
+# name =
+# pageRef = link to the dir
+# weight = <number> sort labels
+# pre = <icon>
+# url = <url>
+# identifier = <id-string>
+
+[[main]]
+name = "文章"
+pageRef = "posts"
+weight = 1
+
+[[main]]
+name = "随笔"
+pageRef = "arts"
+weight = 2
+
+[[main]]
+pre = "github"
+# name = "GitHub"
+url = "https://github.com/nunocoracao/blowfish"
+weight = 10
+
+# [[footer]]
+# name = "Privacy"
+# url = "https://external-link"
