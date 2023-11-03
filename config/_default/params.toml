@@ -10,3 +10,5 @@ homepage.layout = 'profile'
 # show recent pages
 homepage.showRecent = true
 homepage.showMoreLink = true
+
+article.showTableOfContents = true
