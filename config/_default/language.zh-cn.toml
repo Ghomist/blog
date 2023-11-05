@@ -1,6 +1,9 @@
 [author]
 name = "Ghomist"
 image = 'img/logo.png'
-links = [{ gitHub = 'https://github.com/Ghomist' }]
-headline = '耐心 · 平静 · 自然 · 热爱'
+headline = '耐心 · 平静 · 自然 · 热爱 · 活力'
 bio = 'Life needs patience, and so does code'
+links = [
+    { gitHub = 'https://github.com/Ghomist' },
+    # { email = "ghomist@gmail.com" },
+]

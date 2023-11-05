@@ -3,6 +3,8 @@ baseURL = "https://ghomist.github.io/"
 title = "Ghomist 个人随笔"
 theme = "blowfish"
 
+pluralizeListTitles = true
+
 languageCode = "zh-cn"
 enableEmoji = true
 enableGitInfo = true

@@ -1,0 +1,93 @@
+<details open class="mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    {{ i18n "article.table_of_contents" }}
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    {{ .TableOfContents | emojify }}
+  </div>
+</details>
+<details class="mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    {{ i18n "article.table_of_contents" }}
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    {{ .TableOfContents | emojify }}
+  </div>
+</details>
+
+{{ if .Site.Params.smartTOC }} 
+<script>
+  (function () {
+    var $toc = $('#TableOfContents');
+    var $section = $('section');
+    if ($toc.length > 0) {
+      var useSmoothScroll = false;
+      var $window = $(window);
+      
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        var index = 0;
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+          //if (e.offset().top <= currentScroll) {
+            id = e.attr('id');
+            index = i;
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        if (useSmoothScroll && index > 0) $toc.css('margin-top', -(index - 1) + 'rem')
+
+        active.each(function (i, e) {
+          {{ if .Site.Params.smartTOCHideUnfocusedChildren }} 
+            $(e).removeClass('active').siblings('ul').hide();
+          {{ else }}
+            $(e).removeClass('active');
+          {{ end }}
+        });
+
+        {{ if .Site.Params.smartTOCRecursiveActive }} 
+          addClassRecursive($toc.find('a[href="#' + id + '"]').parent())
+        {{ else }}
+          $toc.find('a[href="#' + id + '"]').addClass('active')
+        {{ end }}
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();
+        });
+      }
+
+      function addClassRecursive(e) {
+        var t = e.prop('nodeName');
+        if (t == undefined || t == 'NAV') return;
+        if (t == 'LI') {
+          e.children('A').addClass('active');
+        }
+        addClassRecursive(e.parent());
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        {{ if .Site.Params.smartTOCHideUnfocusedChildren }} 
+          $toc.find('a').parent('li').find('ul').hide();
+        {{ end }}
+        onScroll();
+      });
+
+      useSmoothScroll = $window.height() < $toc.height()
+      if (useSmoothScroll) {
+        //$('.toc').removeClass('lg:sticky');
+        $('.toc').css('top', 0);
+        $toc.css('transition', 'margin 150ms')
+      }
+    }
+  })();
+</script>
+{{ end }}
