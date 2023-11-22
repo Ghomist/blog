@@ -7,3 +7,6 @@ links = [
     { gitHub = 'https://github.com/Ghomist' },
     # { email = "ghomist@gmail.com" },
 ]
+
+[params]
+readingSpeed = 120

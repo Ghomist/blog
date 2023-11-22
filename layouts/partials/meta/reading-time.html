@@ -1,0 +1,7 @@
+<span title="{{ i18n "article.reading_time_title" }}">
+  {{ $readingTime := div (float .WordCount) .Site.Params.readingSpeed }}
+  {{ $readingTime = math.Ceil $readingTime }}
+  {{ $readingTime }} 分钟
+  <!-- {{- i18n "article.reading_time" $readingTime | markdownify | emojify -}} -->
+</span>
+{{- /* Trim EOF */ -}}
